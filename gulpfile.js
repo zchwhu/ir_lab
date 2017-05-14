@@ -25,7 +25,7 @@ gulp.task('allLess', function(){
 });
 
 gulp.task('lessWatcher', function () {
-    gulp.watch('css/less/*.less', ['allLess']);
+    gulp.watch(['css/less/*.less','css/components/*less'], ['allLess']);
 });
 
 
