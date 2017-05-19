@@ -1,0 +1,53 @@
+@import "../components/vars";
+@import "../components/mixin";
+//@import "../components/icon";
+@import "../components/header";
+@import "../components/footer";
+
+.ir-header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 100;
+}
+
+.ir-banner{
+  position: relative;
+}
+
+.ir-bg{
+  width: 100%;
+  height: 380px;
+}
+
+.ir-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .65);
+}
+
+.ir-page-name{
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 30px;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 0 2px #000, 0 0 5px #fff;
+  h1{
+    line-height:70px;
+    font-size: 60px;
+    font-family: 黑体;
+    letter-spacing: 5px;
+  }
+  h2{
+    line-height: 50px;
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+}
