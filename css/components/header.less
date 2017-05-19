@@ -1,0 +1,39 @@
+body, html {
+  font-family: @fontStack;
+}
+
+.ir-header {
+  height: @navHeight;
+}
+
+.ir-container {
+  width: @mainWidth;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ir-logo {
+  float: left;
+  height: @navHeight;
+  img {
+    width: auto;
+    height: @navHeight - 50;
+    margin-top: 25px;
+    vertical-align: bottom;
+  }
+}
+
+.ir-nav {
+  float: right;
+}
+
+.ir-nav-item {
+  .displayInlineBlock();
+  padding: 0 17px;
+  line-height: @navHeight;
+  font-size: 17px;
+  a {
+    letter-spacing: 2px;
+    color: #8e8e8e;
+  }
+}
