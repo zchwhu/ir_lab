@@ -1,0 +1,78 @@
+@import "../components/vars";
+@import "../components/mixin";
+//@import "../components/icon";
+@import "../components/header";
+@import "../components/footer";
+
+.ir-person{
+  padding: 40px 0;
+  font-size: 0;
+}
+
+.ir-person-basic,
+.ir-person-detail{
+  .displayInlineBlock();
+  vertical-align: top;
+}
+
+.ir-person-basic{
+  width: 30%;
+}
+
+.ir-person-detail{
+  width: 70%;
+}
+
+.ir-person-avatar{
+  max-height: 280px;
+  overflow: hidden;
+  img{
+    width: 100%;
+  }
+}
+
+.ir-person-info{
+  padding: 35px 30px;
+  color: #fff;
+  background-color: #493D8B;
+  h1{
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-family: 黑体;
+    letter-spacing: 10px;
+  }
+  span{
+    font-size: 18px;
+    letter-spacing: 5px;
+  }
+  p{
+    font-size: 16px;
+    line-height: 28px;
+  }
+}
+
+.ir-person-detail-inner{
+  margin-left: 40px;
+}
+
+.ir-person-detail-title{
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-family: '黑体';
+  font-weight: bolder;
+  color: #454545;
+  span{
+    margin-left: 5px;
+    font-size: 18px;
+    font-family: "Montserrat";
+    color: #8b8b8b;
+  }
+}
+
+.ir-person-detail-content{
+  padding-left: 5px;
+  line-height: 30px;
+  font-size: 14px;
+  word-break: break-all;
+}
