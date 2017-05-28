@@ -13,7 +13,7 @@ gulp.task('allLess', function(){
         .pipe(gulpLess())//编译less
         .pipe(gulpSourcemaps.write())
         .pipe(gulp.dest('css/'))
-        .pipe(gulpMinifyCss())//压缩css
+        .pipe(gulpMinifyCss({compatibility: 'ie8'}))//压缩css
         .pipe(gulpSourcemaps.write())
         // .pipe(gulp.dest('css/'))
         .pipe(autoprefixer({
