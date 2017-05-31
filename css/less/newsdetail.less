@@ -53,31 +53,10 @@
 .ir-news {
   padding-top: 50px;
   font-size: 0;
-  background-color: @mainBg;
-}
-
-.ir-news-main {
-  .ir-cols(2, 3);
-}
-
-.ir-news-aside {
-  .ir-cols(1, 3);
-}
-
-.ir-news-inner{
-  margin-right: @gutter;
-  padding-top: 60px;
-  background-color: #fff;
-  box-shadow: 0 2px 0 0 #e5e5e5;
-  border-radius: 6px;
-}
-
-.ir-news-aside-inner{
-  margin-left: @gutter;
 }
 
 .ir-news-header{
-  margin: 0 20px;
+  margin: 0 30px;
   padding-bottom: 30px;
   border-bottom: 1px solid #ddd;
 }
@@ -91,20 +70,22 @@
     color: #414141;
   }
   p{
-    margin-top: 8px;
+    margin-top: 16px;
     margin-bottom: 3px;
     font-size: 13px;
     color: #8f8f8f;
     span{
-      margin-right: 20px;
+      &+span{
+        margin-left: 30px;
+      }
     }
   }
 }
 
 .ir-news-content{
   margin-bottom: 50px;
-  padding: 35px 60px 50px;
-  line-height: 30px;
+  padding: 45px 80px 30px;
+  line-height: 32px;
   text-align: justify;
   font-size: 14px;
   img{
@@ -114,49 +95,68 @@
   }
 }
 
-.ir-news-aside-inner{
-  margin-left: 15px;
-  line-height: 30px;
-  h2{
-    font-size: 20px;
-    color: #383838;
+.ir-latest-news{
+  padding: 50px 0;
+  background-color: @mainBg;
+  h1{
+    line-height: 50px;
+    text-align: center;
+    font-size: 26px;
+    color: #333333;
+    letter-spacing: 3px;
   }
 }
 
 .ir-latest-news-list{
   margin-top: 20px;
+  font-size: 0;
+}
+
+.ir-latest-news-item{
+  .ir-cols(5);
+}
+
+.ir-latest-news-inner{
+  margin: 0 @gutter 30px;
 }
 
 .ir-latest-news-img{
   float: left;
-  margin-right: 10px;
+  margin-right: 20px;
   img{
-    width: 70px;
-    height: 70px;
+    width: 160px;
+    height: 100px;
   }
 }
 
-.ir-latest-news-content{
+.ir-latest-news-detail{
+  padding-right: 15px;
   overflow: hidden;
-}
-
-.ir-latest-news-item{
-  margin-bottom: 10px;
-  padding:5px 5px 25px;
-  border-bottom: 1px solid #ddd;
 }
 
 .ir-latest-news-title{
   display: block;
-  overflow: hidden;
+  margin-bottom: 5px;
+  line-height: 30px;
   white-space: nowrap;
+  overflow: hidden;
   text-overflow: ellipsis;
-  font-size: 16px;
-  font-weight: 700;
+  font-size: 17px;
   color: #f62b0a;
 }
 
-.ir-latest-news-time{
+.ir-latest-news-info{
+  font-size: 12px;
+  color: #8b8b8b;
+  span{
+    margin-left: 30px;
+  }
+}
+
+.ir-latest-news-abs{
+  margin-top: 8px;
+  height: 44px;
+  line-height: 22px;
   font-size: 13px;
-  color: #8e8e8e;
+  color: #474747;
 }
