@@ -1,0 +1,76 @@
+@import "../components/vars";
+@import "../components/mixin";
+//@import "../components/icon";
+@import "../components/header";
+@import "../components/footer";
+
+.ir-title {
+  margin-bottom: 20px;
+  padding: 0 @gutter;
+  line-height: 38px;
+  text-align: center;
+  font-size: 30px;
+  color: #333333;
+  letter-spacing: 3px;
+  span{
+    display: block;
+    font-size: 16px;
+    font-family: "Montserrat";
+    color: #8b8b8b;
+  }
+}
+
+.ir-person{
+  padding: 60px 0;
+  &:nth-child(odd){
+    background-color: @mainBg;
+  }
+}
+
+.ir-person-list {
+  margin-top: 20px;
+  font-size: 0;
+}
+
+.ir-person-item {
+  .displayInlineBlock();
+  vertical-align: top;
+  width: 100% / 4;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.ir-person-inner {
+  margin: 0 @gutter;
+}
+
+.ir-person-avatar {
+  display: block;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 20px;
+  .borderRadius(50%);
+}
+
+.ir-person-name {
+  font-family: 黑体;
+  font-weight: bolder;
+  font-size: 21px;
+  color: #343434;
+  a {
+    letter-spacing: 3px;
+  }
+  span {
+    margin-left: 8px;
+    font-size: 18px;
+  }
+}
+
+.ir-person-area {
+  height: 50px;
+  margin: 10px 0;
+  padding: 0 10px;
+  line-height: 20px;
+  font-size: 14px;
+  color: #707070;
+}
