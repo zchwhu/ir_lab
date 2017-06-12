@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>项目详情-武汉大学信息检索与知识挖掘研究所</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
+    <link rel="stylesheet" href="css/projectDetail.css" type="text/css">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="js/lib/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <header class="ir-header">
+        <div class="ir-container">
+            <div class="ir-logo">
+                <img src="img/logo6.png" alt="irlab">
+            </div>
+            <ul class="ir-nav">
+                <li class="ir-nav-item">
+                    <a href="#">首页</a>
+                </li>
+                <li class="ir-nav-item">
+                    <a href="#">团队</a>
+                </li>
+                <li class="ir-nav-item">
+                    <a href="#">项目</a>
+                </li>
+                <li class="ir-nav-item">
+                    <a href="#">新闻</a>
+                </li>
+                <li class="ir-nav-item">
+                    <a href="#">工具</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <section class="ir-banner">
+        <img src="img/bg6.jpg" alt="wuhan university" class="ir-bg">
+        <div class="ir-overlay"></div>
+        <div class="ir-page-name">
+            <h1>科研项目</h1>
+            <h2>RESEARCH PROJECT</h2>
+        </div>
+    </section>
+    <section class="ir-project">
+        <section class="ir-container">
+            <article class="ir-project-main">
+                <div class="ir-project-main-inner">
+                    <div class="ir-project-headimg">
+                        <img src="img/tools1.png" alt="project">
+                    </div>
+                    <div class="ir-project-name">
+                        <div class="ir-project-time">
+                            <p class="month">03</p>
+                            <p class="year">2017</p>
+                        </div>
+                        <h1>WHU-POMS舆情信息跟踪系统</h1>
+                    </div>
+
+                    <!--这里样式由富文本编辑器提供-->
+                    <div class="ir-project-detail">
+                        WHU-POMS是针对武汉大学为例设计实现了一套完整的网络舆情监控系统，全面跟踪互联网上与该组织有关的新闻报道，及时识别新闻热点与敏感新闻。
+
+                        武汉大学网络舆情监控系统中，信息源的采集主要是实时获取搜索引擎的检索结果和对指定站点的自动采集相结合的方式。首先以“武汉大学”、“武大”为关键字，调用Google、Bing、百度、搜狗、有道5个搜索引擎对这两个关键词的检索结果，获取最新的新闻页面；再对各个搜索引擎的返回结果去重整合，返回按时间倒序的新闻列表。
+
+                        利用本系统的采集方式，每天能采集到几百到上千条与武汉大学有关的网页，系统运行10个月以来，总共采集到了近26万条数据，基本涵盖了网络上这段时间与武汉大学有关的新闻，能够满足全面监控武汉大学相关网络舆情的需要。
+
+                        新闻过滤与预处理模块中，系统先利用正文提取工具获取网页的正文内容，再对新闻正文内容进行分句、分词处理。笔者采用了中科院分词包ICTCLAS 2010版作为分词、词性标注和实体标注工具，在前期采集到的24218篇新闻网页上统计关键词出现的文档频率，最后确定了文档频率在1%--10%的7642个关键词构建向量空间，同时生成这些关键词的DF表。将所有的新闻文档都表示成7642维的向量，每个维度上的权重采用优化的BM25方法计算，先统计文档中关键词的词频(TF)，再根据关键词在新闻文档中的位置和词性加权，最后构建权值向量。
+
+                        系统采用了两层聚类的方法发现热点事件，首先提取每天的新闻记录，按照网页获取的时间顺序，依次提交给在线增量聚类器，聚类器根据single-pass算法聚类形成每天的微类，微类表示当天的热点新闻。然后提取一周内每天聚合形成的微类，将这些微类再进行一次凝聚聚类，把微类聚合形成新的聚簇。这样便可得到一周内新闻报道的聚簇，统计每个聚簇内的网页数目，其中聚蔟内网页数量较多的一部分事件即为本周的热点事件。
+
+                        系统利用分类的方法识别与武汉大学有关的敏感新闻，首先确立与武汉大学这个组织有关的敏感词汇，把每个词汇表示成一个描述文档，通过计算新闻文档与描述文档的相似性来识别是否为敏感新闻。识别出敏感新闻文档后，根据敏感词与武汉大学的位置和文本距离对新闻的敏感度评分，如果敏感词与武汉大学在同一句子中，相应敏感度值高；如果敏感词与武汉大学的距离很远，则相应的敏感度较低，最后对敏感度值大于设定阈值的新闻提出预警。
+                    </div>
+                </div>
+            </article>
+            <aside class="ir-project-aside">
+                <div class="ir-project-aside-inner">
+                    <h2>相关推荐</h2>
+                    <h3>RELATED RECOMMEND</h3>
+                    <ul class="ir-related-list">
+                        <li class="ir-related-item">
+                            <img src="img/tool3.png">
+                            <a class="ir-related-name" href="#">NEViewer</a>
+                            <p class="ir-related-abs">NEViewer是一款网络演化可视化分析与探测工具，由王晓光设计，程齐凯编码</p>
+                        </li>
+                        <li class="ir-related-item">
+                            <img src="img/tool3.png">
+                            <a class="ir-related-name" href="#">NEViewer</a>
+                            <p class="ir-related-abs">NEViewer是一款网络演化可视化分析与探测工具，由王晓光设计，程齐凯编码</p>
+                        </li>
+                        <li class="ir-related-item">
+                            <img src="img/tool3.png">
+                            <a class="ir-related-name" href="#">NEViewer</a>
+                            <p class="ir-related-abs">NEViewer是一款网络演化可视化分析与探测工具，由王晓光设计，程齐凯编码</p>
+                        </li>
+                        <li class="ir-related-item">
+                            <img src="img/tool3.png">
+                            <a class="ir-related-name" href="#">NEViewer</a>
+                            <p class="ir-related-abs">NEViewer是一款网络演化可视化分析与探测工具，由王晓光设计，程齐凯编码</p>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+        </section>
+    </section>
+    <footer class="ir-footer">
+        <div class="ir-container">
+            &copy;copyright 2017 武汉大学信息检索与知识挖掘研究所
+        </div>
+    </footer>
+</body>
+</html>
