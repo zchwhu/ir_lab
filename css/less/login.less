@@ -1,4 +1,6 @@
 @import "../components/mixin";
+@import "../components/vars";
+@import "../components/icon";
 
 .ir-login{
   position: fixed;
@@ -60,7 +62,7 @@
 }
 
 .ir-login-title{
-  margin: 90px 35px 30px;
+  margin: 55px 35px 30px;
   font-size: 28px;
   letter-spacing: 2px;
   color: #0277bd;
@@ -75,8 +77,9 @@
 }
 
 .ir-input-wrapper{
+  position: relative;
   margin-bottom: 5px;
-  padding: 10px 0;
+  padding: 10px 20px 10px 0;
   border-bottom: 1px solid #E5E9F2;
   input{
     display: block;
@@ -85,10 +88,22 @@
     font-size: 17px;
     color: #555;
   }
+  .icon{
+    position: absolute;
+    top: 18px;
+    right: 3px;
+    font-size: 14px;
+    color: #c7c7c7;
+  }
+  &.active{
+    .icon{
+      color: #2196f3;
+    }
+  }
 }
 
 .ir-btn-wrapper{
-  margin-top: 45px;
+  margin-top: 35px;
   text-align: right;
   button{
     padding: 0 35px;
@@ -103,6 +118,23 @@
     .transition(background-color .4s ease-in-out 0s);
     &:hover{
       background-color: #1976d2;
+    }
+  }
+}
+
+.ir-input-inline{
+  font-size: 0;
+  .ir-input-wrapper{
+    overflow: hidden;
+  }
+  .ir-vali-img{
+    float: right;
+    width: 35%;
+    margin-left: 10px;
+    img{
+      width: 100%;
+      height: 43px;
+      margin-top: 7px;
     }
   }
 }
