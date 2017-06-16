@@ -8,10 +8,12 @@ requirejs.config({
 });
 
 require(['jquery','js/util/scrollChange.js'], function ($,scrollChange) {
-    console.log(scrollChange);
-    console.log(Object.prototype.toString.call(scrollChange));
     scrollChange({
+        container: '.ir-paper>.ir-container',
+        sidebar: '.ir-paper-year-list',
         menus: '.ir-paper-year-item',
-        contentList: $('.ir-paper-sub-area')
+        contentList: '.ir-paper-sub-area',
+        coverHeight: 130,
+        fixedTop: 130
     })
 })

@@ -7,14 +7,18 @@ requirejs.config({
     }
 });
 
-define(['jquery'], function ($) {
+define(['jquery','js/util/setFixed.js'], function ($,setFixed) {
     function ScrollChange(options) {
         if(!options.menus || !options.contentList){
             return;
         }
+        this.container = $(options.container);
+        this.container = $(options.sidebar);
         this.menus = $(options.menus);
-        this.contentList = options.contentList;
+        this.contentList = $(options.contentList);
         this.speed = options.speed || 2000;
+        this.coverHeight = options.coverHeight || 0;
+        this.activeCls = options.activeCls || 'active';
         this.init();
     }
 
@@ -26,25 +30,27 @@ define(['jquery'], function ($) {
                 console.log(this.contentList[i]);
                 heightArr.push($(this.contentList[i]).offset().top);
             }
-            console.log(heightArr);
             return heightArr;
         }.bind(this))();
         this.bindEvents();
+        setFixed();
     }
 
     ScrollChange.prototype.bindEvents = function () {
-        $(document).on('click',this.menus,function () {
-            this.onChangeToScroll(2);
+        $(document).on('click',this.menus,function (event) {
+            var $index = $(event.target).index();
+            this.onChangeToScroll($index);
         }.bind(this));
     }
 
-    ScrollChange.prototype.onMenuChange = function () {
-
+    ScrollChange.prototype.onMenuChange = function (index) {
+        this.menus.eq(index).addClass(this.activeCls)
+            .siblings().removeClass(this.activeCls);
     }
 
     ScrollChange.prototype.onChangeToScroll = function (index) {
         $('html,body').animate({
-            scrollTop: this.contentHeight[index]
+            scrollTop: this.contentHeight[index] - this.coverHeight
         }, 1000);
     }
 
