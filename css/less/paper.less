@@ -64,10 +64,18 @@
   line-height: 35px;
   cursor: pointer;
   .transition(all .3s);
-  &.active,
-  &:hover{
+  color: #586069;
+  &.active{
     color: #fff;
     background-color: #2979ff;
+    .borderRadius(3px);
+    &:hover{
+      color: #fff;
+      background-color: #2979ff;
+    }
+  }
+  &:hover{
+    background-color: #dddddd;
     .borderRadius(3px);
   }
 }
