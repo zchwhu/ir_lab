@@ -11,10 +11,9 @@ define(['jquery'], function ($) {
     return function (options) {
         $(window).scroll(function () {
             if($(document).scrollTop()>options.scrollY){
-                console.log('ok');
-                $(options.target).addClass('fixed');
+                $(options.target).css(options.changedStyle);
             }else{
-                $(options.target).removeClass('fixed');
+                $(options.target).css(options.defaultStyle);
             }
         })
     }
