@@ -53,10 +53,74 @@ body, html {
 }
 
 .ir-user-logged{
+  position: relative;
+  z-index: 2000;
   margin-top: (@navHeight - 35)/2;
+  cursor: pointer;
   img{
     width: 35px;
     height: 35px;
     .borderRadius(50%);
+  }
+}
+
+.ir-dropdown{
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 50px;
+  right: -8px;
+  z-index: 3000;
+  min-width: 150px;
+  margin-top: -20px;
+  padding: 3px 0;
+  background-color: #fff;
+  .borderRadius(3px);
+  box-shadow: 0px 4px 8px 0px rgba(7, 17, 27, 0.2);
+  .transition(all .4s ease-in-out);
+  &::before{
+    content: '';
+    position: absolute;
+    top: -16px;
+    right: 17px;
+    z-index: 800;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 8px;
+    border-color: transparent transparent #f7f7f7 transparent;
+  }
+  &::after{
+    content: '';
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px;
+    border-color: transparent transparent #fff transparent;
+    z-index: 1200;
+  }
+  &.show{
+      visibility: visible;
+      opacity: 1;
+      margin-top: 0;
+  }
+}
+
+.ir-dropdown-item{
+  margin: 0 3px;
+  color: #8f8f8f;
+  .transition(all .2s);
+  &:hover{
+    background-color: #2196f3;
+    color: #fff;
+  }
+  a{
+    display: block;
+    padding: 8px 25px;
+    font-size: 14px;
+    color: inherit;
   }
 }
