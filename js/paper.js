@@ -42,4 +42,13 @@ require(['jquery', 'js/util/scrollChange.js', 'js/util/setFixed.js','js/util/tog
             top: 0
         }
     })
+
+    $(window).scroll(function () {
+        var $scrollTop = $(document).scrollTop();
+        if($scrollTop>CONST.NAV_HEIGHT){
+            $(".ir-header").addClass('onscroll');
+        }else{
+            $(".ir-header").removeClass('onscroll');
+        }
+    });
 })
