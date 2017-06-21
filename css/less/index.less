@@ -40,16 +40,214 @@
     line-height: 90px;
     font-size: 25px;
     font-family: "Montserrat";
+    margin-top: -10px;
+    opacity: 0;
+    -webkit-animation:fadeIn 1.6s ease-in-out 0s forwards;
+    -o-animation:fadeIn 1.6s ease-in-out 0s forwards;
+    animation:fadeIn 1.6s ease-in-out 0s forwards;
   }
   h3 {
-    width: 300px;
-    padding-top: 15px;
-    border-top: 3px solid #fff;
-    margin: 70px auto 0;
-    font-size: 25px;
-    letter-spacing: 2px;
+    overflow: hidden;
+    position: relative;
+    width: 11ch;
+    margin: 5px auto 0;
+    padding-right: 1px;
+    box-sizing: content-box;
+    white-space: nowrap;
+    font-size: 38px;
+    border-right: 3px solid transparent;
+    font-family: "Times New Roman";
+    -webkit-animation:typing 4s steps(11),caret 1s steps(1) 4;
+    -o-animation:typing 4s steps(11),caret 1s steps(1) 4;
+    animation:typing 4s steps(11),caret 1s steps(1) 4;
+    &::after{
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 20px;
+      height: 3px;
+      margin-left: -10px;
+      opacity: 0;
+      background-color: #fff;
+      -webkit-animation:show 0.5s linear 4s forwards;
+      -o-animation:show 0.5s linear 4s forwards;
+      animation:show 0.5s linear 4s forwards;
+    }
+  }
+  .line{
+    width: 0;
+    height: 3px;
+    margin: 75px auto 20px;
+    opacity: 0;
+    background-color: #fff;
+    -webkit-animation:expand 0.6s ease-in 4.2s forwards;
+    -o-animation:expand 0.6s ease-in 4.2s forwards;
+    animation:expand 0.6s ease-in 4.2s forwards;
   }
 }
+
+//动画定义
+@-webkit-keyframes expand {
+  to{
+    width: 320px;
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes expand {
+  to{
+    width: 320px;
+    opacity: 1;
+  }
+}
+
+@-o-keyframes expand {
+  to{
+    width: 320px;
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes expand {
+  to{
+    width: 320px;
+    opacity: 1;
+  }
+}
+
+@keyframes expand {
+  to{
+    width: 320px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  to{
+    margin-top: 0;
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  to{
+    margin-top: 0;
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  to{
+    margin-top: 0;
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  to{
+    margin-top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  to{
+    margin-top: 0;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes caret {
+  50% {
+    border-right-color: #fff;
+  }
+}
+
+@-moz-keyframes caret {
+  50% {
+    border-right-color: #fff;
+  }
+}
+
+@-o-keyframes caret {
+  50% {
+    border-right-color: #fff;
+  }
+}
+
+@-ms-keyframes caret {
+  50% {
+    border-right-color: #fff;
+  }
+}
+
+@keyframes caret {
+  50% {
+    border-right-color: #fff;
+  }
+}
+
+@-webkit-keyframes show {
+  100% {
+    opacity: 1
+  }
+}
+
+@-moz-keyframes show {
+  100% {
+    opacity: 1
+  }
+}
+
+@-o-keyframes show {
+  100% {
+    opacity: 1
+  }
+}
+
+@-ms-keyframes show {
+  100% {
+    opacity: 1
+  }
+}
+
+@keyframes show {
+  100% {
+    opacity: 1
+  }
+}
+
+@-webkit-keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@-moz-keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@-o-keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@-ms-keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+//动画定义
 
 .ir-intro {
   margin: 50px 0 60px;
@@ -78,6 +276,9 @@
     margin-left: 5px;
     font-size: 20px;
     font-family: "Montserrat";
+  }
+  a{
+    color: inherit;
   }
 }
 
@@ -111,6 +312,7 @@
   font-size: 18px;
   background-color: #2196f3;
   .borderRadius(3px);
+  cursor: pointer;
 }
 
 .ir-team-wrapper{
@@ -358,4 +560,3 @@
 .ir-icon-code{
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAB+ElEQVRYR+1W21ECQRDsjkCIQI1AjUCJQI1AiUCNQIlAjUCMQDMQIhAiECLQDMZqaxfvscfOIRQ/zg9V3MxOX/f07BFbDm65P/4BrIUBM+sAOPDISXJczFsXgDMALw4AU5KHmwBwB+DWAeCZ5OUmAIwA7AEYZkCMSCp3Ea0kMLNrAPcNTR4BfGWY6P0VgN7wogFAH4Bm4bSJBZK1F27LwCwcHn+LvaTtJLCQej4hKQZL4QYQrPYJQBqWdCycqGG8IfngGMiflDYATgC8OQ6u6byspg0Al9VSOrcGYGZaFjuVQtGqjVfycciZBhtWa37tVtmA8UGSATPTEO066I4pXQCqaQIwJikJa1EDYGZaKB8tms+D/d6X1AxISkIXgLjX5etoJ6HXqi3+p8NegyP0+5R4HhvOSKasWXeBmbmGrfAqg8JsiD1ZtRpdktqSLgbk8eMWEvQAaEDVQOCrVp2TFLBkpGYgtWQESFqnaJRkemsxoZBUxTs/uQEjmuweCJbUgKl5CoCsKdueA9Cq7VTv/GVsegDI9xqwXOyHu2CY2vluCaqJZiZ9rzLdJY+cIvv2Sea+CxbHeRjQDacFkztUgya2jkiqxhUeAOY6KSSt5S6IDc3MewPGksaVu9IMhG+A0ldsho3GjbcSgDbUr5qbnYFVD/bW/QP4BniomiHyCtHeAAAAAElFTkSuQmCC");
 }
-
